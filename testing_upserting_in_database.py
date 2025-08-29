@@ -1,12 +1,14 @@
 from qdrant_client import QdrantClient
+import os
 from qdrant_client.http import models
 import numpy as np
+from dotenv import load_dotenv
 import uuid
 
 # Connect to Qdrant Cloud
 client = QdrantClient(
-    url="https://46548259-6b1c-4b29-bbe6-d8ec81363cdc.europe-west3-0.gcp.cloud.qdrant.io",
-    api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.vQVQlomUKYi-MFgUGbo1BTzDIFtaecqE9KQwDeEMdfE",
+    url= os.getenv("url"),
+    api_key= os.getenv("secret_key"),
 )
 
 # Create/recreate collection (skip if already created from dashboard)
