@@ -3,6 +3,7 @@ import os
 from qdrant_client.http import models
 import numpy as np
 from dotenv import load_dotenv
+load_dotenv()
 import uuid
 
 # Connect to Qdrant Cloud
